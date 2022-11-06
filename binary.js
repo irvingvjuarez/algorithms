@@ -25,6 +25,9 @@ const toBinary = () => {
   return binaryValues.join("")
 }
 
-
-const binary = toBinary()
-console.log(binary)
+if (decimal) {
+  const binary = toBinary()
+  console.log(binary)
+} else {
+  throw new Error("No parameter provided. $node binary.js [decimal]")
+}
