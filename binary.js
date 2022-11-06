@@ -1,6 +1,6 @@
 // $node binary.js [decimal]
 const byte = 256;
-const decimal = process.argv[2]
+let decimal = process.argv[2]
 
 const getBinarySet = () => {
   const baseBinaryNumbers = []
@@ -8,13 +8,24 @@ const getBinarySet = () => {
     baseBinaryNumbers.push(i)
   }
 
-  return baseBinaryNumbers
+  return baseBinaryNumbers.reverse()
 }
-
 
 const toBinary = () => {
   const binarySet = getBinarySet()
-  console.log(binarySet)
+  const binaryArr = []
+
+  for(let binary of binarySet) {
+    const apply = (binary <= decimal)
+    const bit = apply ? 1 : 0;
+
+    if (apply) decimal -= binary
+    binaryArr.push(bit)
+  }
+
+  return binaryArr.join("")
 }
 
-toBinary()
+
+const binary = toBinary()
+console.log(binary)
