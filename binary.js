@@ -1,5 +1,4 @@
 import { getBinarySet } from "./services/getBinarySet.js";
-import { byte } from "./globals.js"
 
 // $node binary.js [decimal]
 let decimal = process.argv[2]
