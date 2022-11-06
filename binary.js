@@ -4,28 +4,25 @@ let decimal = process.argv[2]
 
 const getBinarySet = () => {
   const baseBinaryNumbers = []
-  for(let i = 1; i <= byte; i *= 2){
+  for(let i = byte; i >= 1; i /= 2){
     baseBinaryNumbers.push(i)
   }
-
-  console.log(baseBinaryNumbers)
-
-  return baseBinaryNumbers.reverse()
+  return baseBinaryNumbers
 }
 
 const toBinary = () => {
   const binarySet = getBinarySet()
-  const binaryArr = []
+  const binaryValues = []
 
   for(let binary of binarySet) {
     const apply = (binary <= decimal)
     const bit = apply ? 1 : 0;
 
     if (apply) decimal -= binary
-    binaryArr.push(bit)
+    binaryValues.push(bit)
   }
 
-  return binaryArr.join("")
+  return binaryValues.join("")
 }
 
 
