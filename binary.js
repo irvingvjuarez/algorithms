@@ -8,6 +8,8 @@ const getBinarySet = () => {
     baseBinaryNumbers.push(i)
   }
 
+  console.log(baseBinaryNumbers)
+
   return baseBinaryNumbers.reverse()
 }
 
